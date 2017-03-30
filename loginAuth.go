@@ -16,11 +16,11 @@ import (
 	"net/smtp"
 )
 
-// LoginAuth returns an Auth that implements the LOGIN authentication
+// New returns an Auth that implements the LOGIN authentication
 // mechanism
 // The returned Auth uses the given username and password to authenticate
 // on TLS connections to host.
-func LoginAuth(username, password, host string) smtp.Auth {
+func New(username, password, host string) smtp.Auth {
 	return &loginAuth{username, password, host}
 }
 
